@@ -16,7 +16,7 @@ public class QuanLyDocGia {
 
     public QuanLyDocGia() {
     }
-
+// ten biến bằng tiếng anh
     public QuanLyDocGia(String ten, int tuoi, String gioiTinh, String date, String diaChi, int maDocGia) {
         this.ten = ten;
         this.tuoi = tuoi;
@@ -87,10 +87,10 @@ public class QuanLyDocGia {
         Scanner scanner = new Scanner(System.in);
         try {
             System.out.print("Nhap Name: ");
-            String ten = scanner.nextLine();
+            String ten = scanner.nextLine();// ?
 
             System.out.print("Nhap Age: ");
-            int tuoi = scanner.nextInt();
+            int tuoi = scanner.nextInt();//?
             scanner.nextLine(); 
 
             System.out.print("Nhap Gender: ");
@@ -100,10 +100,10 @@ public class QuanLyDocGia {
             String date = scanner.nextLine();
 
             System.out.print("Nhap Address: ");
-            String diaChi = scanner.nextLine();
+            String diaChi = scanner.nextLine();//?
 
             System.out.print("Nhap Reader code: ");
-            int maDocGia = scanner.nextInt();
+            int maDocGia = scanner.nextInt();//?
 
             return new QuanLyDocGia(ten, tuoi, gioiTinh, date, diaChi, maDocGia);
 
