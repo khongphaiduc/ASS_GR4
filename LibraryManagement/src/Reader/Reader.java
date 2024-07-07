@@ -11,42 +11,47 @@ import java.util.Scanner;
  * @author TRUNG NGUYÊN
  */
 public class Reader {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int choice = 0;
+        String choice = "";
 
         do {
             System.out.println("1. Dang ky doc gia moi");
             System.out.println("2. Cap nhat thong tin doc gia");
-            System.out.println("3. Tim kiem doc gia");
+            System.out.println("3. Tim kiem thong tin doc gia");
             System.out.println("4. Thoat");
             System.out.print("Nhap lua chon cua ban: ");
-            choice = scanner.nextInt();
-            scanner.nextLine(); // Clear the newline character
+            choice = scanner.nextLine();
 
-            switch (choice) {
-                case 1:
-                    QuanLyDocGia.dangKyDocGiaMoi();
-                    break;
-                case 2:
-                    System.out.print("Nhap ma doc gia can cap nhat: ");
-                    String maDocGiaCanCapNhat = scanner.nextLine();
-                    QuanLyDocGia quanLyDocGia = new QuanLyDocGia();
-                    quanLyDocGia.capNhatThongTinDocGia(maDocGiaCanCapNhat);
-                    break;
-                case 3:
-                    System.out.print("Nhap ma doc gia can tim: ");
-                    String tuKhoa = scanner.nextLine();
-                    QuanLyDocGia.timKiemDocGia(tuKhoa);
-                    break;
-                case 4:
-                    System.out.println("Ket thuc chuong trinh.");
-                    break;
-                default:
-                    System.out.println("Lua chon khong hop le. Vui long chon lai.");
+            try {
+                int choiceNumber = Integer.parseInt(choice);
+
+                switch (choiceNumber) {
+                    case 1:
+                        ReaderManagement.registerNewReader();
+                        break;
+                    case 2:
+                        System.out.print("Nhap ma doc gia can cap nhat: ");
+                        String readerCodeToUpdate = scanner.nextLine();
+                        ReaderManagement readerManagement = new ReaderManagement();
+                        readerManagement.updateReaderInfo(readerCodeToUpdate);
+                        break;
+                    case 3:
+                        System.out.print("Nhap ma doc gia de tim kiem: ");
+                        String keyword = scanner.nextLine();
+                        ReaderManagement.searchReader(keyword);
+                        break;
+                    case 4:
+                        System.out.println("Thoat khoi chuong trinh.");
+                        break;
+                    default:
+                        System.out.println("Lua chon sai(chon 1 hoac 2 hoac 3). Vui long nhap lai.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Lua chon sai. Vui long nhap mot so nguyen.");
             }
-        } while (choice != 4);
+
+        } while (!choice.equals("4"));
     }
 }
-    
-
