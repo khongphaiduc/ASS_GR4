@@ -20,7 +20,8 @@ public class Reader {
             System.out.println("1. Dang ky doc gia moi");
             System.out.println("2. Cap nhat thong tin doc gia");
             System.out.println("3. Tim kiem thong tin doc gia");
-            System.out.println("4. Thoat");
+            System.out.println("4. Hien thi thong tin doc gia");
+            System.out.println("5. Thoat");
             System.out.print("Nhap lua chon cua ban: ");
             choice = scanner.nextLine();
 
@@ -43,6 +44,12 @@ public class Reader {
                         ReaderManagement.searchReader(keyword);
                         break;
                     case 4:
+                        System.out.print("Nhap ma doc gia de hien thi thong tin: ");
+                        String codeToShow = scanner.nextLine();
+                        ReaderManagement.searchReader(codeToShow);
+                        break;
+
+                    case 5:
                         System.out.println("Thoat khoi chuong trinh.");
                         break;
                     default:
