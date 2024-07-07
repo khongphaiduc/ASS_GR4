@@ -3,8 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/TRUNG%20NGUYÊN/ASS_GR4/LibraryManagement/src/Reader/Reader.java</file>
             <file>file:/C:/Users/TRUNG%20NGUYÊN/ASS_GR4/LibraryManagement/src/Reader/ReaderManagement.java</file>
+=======
+            <file>file:/C:/Users/Admin/ASS_GR4/LibraryManagement/src/Invoice/MainVoice.java</file>
+            <file>file:/C:/Users/Admin/ASS_GR4/LibraryManagement/src/Invoice/OutInvoice.java</file>
+            <file>file:/C:/Users/Admin/ASS_GR4/LibraryManagement/src/DataBooks/ListBooks.java</file>
+>>>>>>> a70f86b4d5553b3ba78eb7272c1019899d9e629a
         </group>
     </open-files>
 </project-private>

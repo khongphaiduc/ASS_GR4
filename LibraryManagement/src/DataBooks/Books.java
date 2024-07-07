@@ -9,34 +9,34 @@ package DataBooks;
  * @author Admin
  */
 public class Books {
-      private String  Title,Author,Publisher;
-    
-    private int Year_of_Publication,Number_of_Pages;
-    
+
+    private String Title, Author, Publisher;
+
+    private int Year_of_Publication, Number_of_Pages;
+
     private String Summary;
- 
-    private int price;
-     
-    
-    public Books(String Title, String Author, String Publisher, int Year_of_Publication, int Number_of_Pages, String Summary,int price) {
+
+    private double price;
+
+    public Books(String Title, String Author, String Publisher, int Year_of_Publication, int Number_of_Pages, String Summary, double price) {
         this.Title = Title;
         this.Author = Author;
         this.Publisher = Publisher;
         this.Year_of_Publication = Year_of_Publication;
         this.Number_of_Pages = Number_of_Pages;
         this.Summary = Summary;
-        this.price=price;
+        this.price = price;
     }
 
     public String getTitle() {
         return Title;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -83,17 +83,17 @@ public class Books {
     public void setSummary(String Summary) {
         this.Summary = Summary;
     }
-    
+
     @Override
     public String toString() {
-    return "Book Details " +
-           "\nTitle: " + Title +
-           "\nAuthor: " + Author +
-           "\nPublisher: " + Publisher +
-           "\nYear of Publication: " + Year_of_Publication +
-           "\nNumber of Pages: " + Number_of_Pages +
-           "\nSummary: " + Summary+
-            "\nPrice :"+price;
-}
-    
+        return "Book Details "
+                + "\nTitle: " + Title
+                + "\nAuthor: " + Author
+                + "\nPublisher: " + Publisher
+                + "\nYear of Publication: " + Year_of_Publication
+                + "\nNumber of Pages: " + Number_of_Pages
+                + "\nSummary: " + Summary
+                + "\nPrice :" + price;
+    }
+
 }
