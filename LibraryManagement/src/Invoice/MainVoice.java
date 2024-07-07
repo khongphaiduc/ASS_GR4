@@ -3,7 +3,7 @@ package Invoice;
 import DataBooks.ListBooks;
 import java.util.Scanner;
 
-public class MainTest {
+public class MainVoice {
 
     public static void main(String[] args) {
 

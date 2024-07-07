@@ -16,6 +16,7 @@ private String readerCode;
 
     public QuanLyDocGia() {
     }
+<<<<<<< HEAD
 
     public QuanLyDocGia(String name, int age, String gender, String dateOfBirth, String address, String readerCode) {
         this.name = name;
@@ -24,6 +25,16 @@ private String readerCode;
         this.dateOfBirth = dateOfBirth;
         this.address = address;
         this.readerCode = readerCode;
+=======
+// ten biến bằng tiếng anh
+    public QuanLyDocGia(String ten, int tuoi, String gioiTinh, String date, String diaChi, int maDocGia) {
+        this.ten = ten;
+        this.tuoi = tuoi;
+        this.gioiTinh = gioiTinh;
+        this.date = date;
+        this.diaChi = diaChi;
+        this.maDocGia = maDocGia;
+>>>>>>> 5c6ef23f4dd85a0074c89d02283691d7221628eb
     }
 
     public String getName() {
@@ -88,6 +99,7 @@ private String readerCode;
         Scanner scanner = new Scanner(System.in);
         try {
             System.out.print("Nhap Name: ");
+<<<<<<< HEAD
             String ten = scanner.nextLine();
             while (!ten.matches("[a-zA-Z\\s]+")) {
                 System.out.println("Loi: Ten khong duoc chua so. Vui long nhap lai.");
@@ -98,6 +110,13 @@ private String readerCode;
             System.out.print("Nhap Age: ");
             int tuoi = scanner.nextInt();
             scanner.nextLine(); // Clear the newline character
+=======
+            String ten = scanner.nextLine();// ?
+
+            System.out.print("Nhap Age: ");
+            int tuoi = scanner.nextInt();//?
+            scanner.nextLine(); 
+>>>>>>> 5c6ef23f4dd85a0074c89d02283691d7221628eb
 
             System.out.print("Nhap Gender: ");
             String gioiTinh = scanner.nextLine();
@@ -111,10 +130,14 @@ private String readerCode;
             String date = scanner.nextLine();
 
             System.out.print("Nhap Address: ");
-            String diaChi = scanner.nextLine();
+            String diaChi = scanner.nextLine();//?
 
             System.out.print("Nhap Reader code: ");
+<<<<<<< HEAD
             String maDocGia = scanner.nextLine();
+=======
+            int maDocGia = scanner.nextInt();//?
+>>>>>>> 5c6ef23f4dd85a0074c89d02283691d7221628eb
 
             return new QuanLyDocGia(ten, tuoi, gioiTinh, date, diaChi, maDocGia);
 
@@ -172,11 +195,21 @@ private String readerCode;
         }
     }
 
+<<<<<<< HEAD
    public static List<QuanLyDocGia> timKiemDocGia(List<QuanLyDocGia> danhSachDocGia, String tuKhoa) {
     List<QuanLyDocGia> ketQua = new ArrayList<>();
     for (QuanLyDocGia docGia : danhSachDocGia) {
         if (docGia.getReaderCode().equals(tuKhoa)) { // Chỉ tìm theo mã độc giả
             ketQua.add(docGia);
+=======
+    public static List<QuanLyDocGia> timKiemDocGia(List<QuanLyDocGia> danhSachDocGia, String tuKhoa) {
+        List<QuanLyDocGia> ketQua = new ArrayList<>();
+        
+        for (QuanLyDocGia docGia : danhSachDocGia) {
+            if (docGia.getTen().equalsIgnoreCase(tuKhoa) || Integer.toString(docGia.getMaDocGia()).equals(tuKhoa)) {
+                ketQua.add(docGia);
+            }
+>>>>>>> 5c6ef23f4dd85a0074c89d02283691d7221628eb
         }
     }
     return ketQua;
