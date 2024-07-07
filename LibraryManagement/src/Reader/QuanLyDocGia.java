@@ -163,6 +163,7 @@ public class QuanLyDocGia {
 
     public static List<QuanLyDocGia> timKiemDocGia(List<QuanLyDocGia> danhSachDocGia, String tuKhoa) {
         List<QuanLyDocGia> ketQua = new ArrayList<>();
+        
         for (QuanLyDocGia docGia : danhSachDocGia) {
             if (docGia.getTen().equalsIgnoreCase(tuKhoa) || Integer.toString(docGia.getMaDocGia()).equals(tuKhoa)) {
                 ketQua.add(docGia);
