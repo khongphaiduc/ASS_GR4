@@ -59,16 +59,13 @@ public class OutInvoice {
             writer.write("Nội Dung Gồm \n ");
             int sumtien = 0;
             ListBooks obz = new ListBooks();
-            int count = 0;
+          
+              System.out.println("Nhập 01 để kết thúc thêm sách vào hóa đơn !");
+               System.out.println("Nhập Mã Sách ");
             while (true) {
 
-                if (count == 0) {
-                    System.out.println("Nhập 01 để kết thúc thêm sách vào hóa đơn !");
-                    count++;
-                }
-
-                System.out.println("Nhập Mã Sách ");
                 String namebooks = duc.nextLine();
+                
                 if (namebooks.equals("01")) {
                     break;
                 }
