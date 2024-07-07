@@ -1,16 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Reader;
-
 import java.util.Scanner;
 
-/**
- *
- * @author TRUNG NGUYÊN
- */
 public class Reader {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice = 0;
@@ -48,5 +39,3 @@ public class Reader {
         } while (choice != 4);
     }
 }
-    
-
