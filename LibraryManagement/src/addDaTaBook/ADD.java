@@ -31,7 +31,7 @@ public class ADD {
 
             System.out.println("Nhập số trang: ");
             int number_of_pages = duc.nextInt();
-            duc.nextLine(); // Tiêu thụ ký tự xuống dòng còn lại
+            duc.nextLine();
 
             System.out.println("Nhập tóm tắt: ");
             String summary = duc.nextLine();
