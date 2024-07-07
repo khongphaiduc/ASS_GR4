@@ -34,7 +34,7 @@ public class Education_3  extends Books{
     }
     
     @Override
-    public int getPrice(){
+    public double getPrice(){
         return super.getPrice();
     }
     
