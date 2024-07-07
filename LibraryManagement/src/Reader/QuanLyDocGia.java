@@ -1,174 +1,203 @@
-package reader;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Reader;
 
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
-
+/**
+ *
+ * @author TRUNG NGUYÊN
+ */
 public class QuanLyDocGia {
+    private String name;
+    private int age;
+    private String gender;
+    private String dateOfBirth;
+    private String address;
+    private String readerCode;
 
-    private String ten;
-    private int tuoi;
-    private String gioiTinh;
-    private String date;
-    private String diaChi;
-    private int maDocGia;
+    private static Map<String, QuanLyDocGia> danhSachDocGia = new HashMap<>();
 
     public QuanLyDocGia() {
     }
-// ten biến bằng tiếng anh
-    public QuanLyDocGia(String ten, int tuoi, String gioiTinh, String date, String diaChi, int maDocGia) {
-        this.ten = ten;
-        this.tuoi = tuoi;
-        this.gioiTinh = gioiTinh;
-        this.date = date;
-        this.diaChi = diaChi;
-        this.maDocGia = maDocGia;
+
+    public QuanLyDocGia(String name, int age, String gender, String dateOfBirth, String address, String readerCode) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
+        this.address = address;
+        this.readerCode = readerCode;
     }
 
-    public String getTen() {
-        return ten;
+    public String getName() {
+        return name;
     }
 
-    public void setTen(String ten) {
-        this.ten = ten;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getTuoi() {
-        return tuoi;
+    public int getAge() {
+        return age;
     }
 
-    public void setTuoi(int tuoi) {
-        this.tuoi = tuoi;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public String getGioiTinh() {
-        return gioiTinh;
+    public String getGender() {
+        return gender;
     }
 
-    public void setGioiTinh(String gioiTinh) {
-        this.gioiTinh = gioiTinh;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getDate() {
-        return date;
+    public String getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
-    public String getDiaChi() {
-        return diaChi;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDiaChi(String diaChi) {
-        this.diaChi = diaChi;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public int getMaDocGia() {
-        return maDocGia;
+    public String getReaderCode() {
+        return readerCode;
     }
 
-    public void setMaDocGia(int maDocGia) {
-        this.maDocGia = maDocGia;
+    public void setReaderCode(String readerCode) {
+        this.readerCode = readerCode;
     }
 
     public void display() {
-        System.out.println("Name: " + ten);
-        System.out.println("Age: " + tuoi);
-        System.out.println("Gender: " + gioiTinh);
-        System.out.println("Date: " + date);
-        System.out.println("Address: " + diaChi);
-        System.out.println("Reader code: " + maDocGia);
+        System.out.print("Name: " + name + " | ");
+        System.out.print("Age: " + age + " | ");
+        System.out.print("Gender: " + gender + " | ");
+        System.out.print("Date: " + dateOfBirth + " | ");
+        System.out.print("Address: " + address + " | ");
+        System.out.print("Reader code: " + readerCode + "\n");
     }
 
-    public static QuanLyDocGia dangKyDocGiaMoi() {
+    public static void dangKyDocGiaMoi() {
         Scanner scanner = new Scanner(System.in);
         try {
             System.out.print("Nhap Name: ");
-            String ten = scanner.nextLine();// ?
+            String name = scanner.nextLine();
+            while (!name.matches("[a-zA-Z\\s]+")) {
+                System.out.println("Loi: Ten khong duoc chua so. Vui long nhap lai.");
+                System.out.print("Nhap Name: ");
+                name = scanner.nextLine();
+            }
 
             System.out.print("Nhap Age: ");
-            int tuoi = scanner.nextInt();//?
-            scanner.nextLine(); 
+            int age = scanner.nextInt();
+            scanner.nextLine(); // Clear the newline character
 
             System.out.print("Nhap Gender: ");
-            String gioiTinh = scanner.nextLine();
+            String gender = scanner.nextLine();
+            while (!gender.matches("[a-zA-Z\\s]+")) {
+                System.out.println("Loi: Gioi tinh khong duoc chua so. Vui long nhap lai.");
+                System.out.print("Nhap Gender: ");
+                gender = scanner.nextLine();
+            }
 
             System.out.print("Nhap Date (dd/MM/yyyy): ");
-            String date = scanner.nextLine();
+            String dateOfBirth = scanner.nextLine();
 
             System.out.print("Nhap Address: ");
-            String diaChi = scanner.nextLine();//?
+            String address = scanner.nextLine();
 
             System.out.print("Nhap Reader code: ");
-            int maDocGia = scanner.nextInt();//?
+            String readerCode = scanner.nextLine();
 
-            return new QuanLyDocGia(ten, tuoi, gioiTinh, date, diaChi, maDocGia);
+            QuanLyDocGia newReader = new QuanLyDocGia(name, age, gender, dateOfBirth, address, readerCode);
+            danhSachDocGia.put(readerCode, newReader);
+            System.out.println("Da dang ky doc gia moi thanh cong!");
 
-        } catch (InputMismatchException e) {
-            System.out.println("Loi: Du lieu nhap vao khong hop le!");
-            scanner.nextLine(); // Clear the invalid input
-        } catch (Exception e) {
-            System.out.println("Da xay ra loi: " + e.getMessage());
-        }
-        return null;
-    }
-
-    public void capNhatThongTinDocGia() {
-        Scanner scanner = new Scanner(System.in);
-        try {
-            System.out.print("Nhap ten moi (hoac nhan Enter de bo qua): ");
-            String tenMoi = scanner.nextLine();
-            if (!tenMoi.isEmpty()) {
-                this.ten = tenMoi;
-            }
-
-            System.out.print("Nhap tuoi moi (hoac nhan Enter de bo qua): ");
-            String tuoiMoi = scanner.nextLine();
-            if (!tuoiMoi.isEmpty()) {
-                this.tuoi = Integer.parseInt(tuoiMoi);
-            }
-
-            System.out.print("Nhap gioi tinh moi (hoac nhan Enter de bo qua): ");
-            String gioiTinhMoi = scanner.nextLine();
-            if (!gioiTinhMoi.isEmpty()) {
-                this.gioiTinh = gioiTinhMoi;
-            }
-
-            System.out.print("Nhap ngay moi (dd/MM/yyyy) (hoac nhan Enter de bo qua): ");
-            String dateMoi = scanner.nextLine();
-            if (!dateMoi.isEmpty()) {
-                this.date = dateMoi;
-            }
-
-            System.out.print("Nhap dia chi moi (hoac nhan Enter de bo qua): ");
-            String diaChiMoi = scanner.nextLine();
-            if (!diaChiMoi.isEmpty()) {
-                this.diaChi = diaChiMoi;
-            }
-
-            System.out.print("Nhap ma doc gia moi (hoac nhan Enter de bo qua): ");
-            String maDocGiaMoi = scanner.nextLine();
-            if (!maDocGiaMoi.isEmpty()) {
-                this.maDocGia = Integer.parseInt(maDocGiaMoi);
-            }
-        } catch (NumberFormatException e) {
-            System.out.println("Loi: Tuoi hoac ma doc gia phai la so!");
         } catch (Exception e) {
             System.out.println("Da xay ra loi: " + e.getMessage());
         }
     }
 
-    public static List<QuanLyDocGia> timKiemDocGia(List<QuanLyDocGia> danhSachDocGia, String tuKhoa) {
-        List<QuanLyDocGia> ketQua = new ArrayList<>();
-        
-        for (QuanLyDocGia docGia : danhSachDocGia) {
-            if (docGia.getTen().equalsIgnoreCase(tuKhoa) || Integer.toString(docGia.getMaDocGia()).equals(tuKhoa)) {
-                ketQua.add(docGia);
-            }
+    public static void timKiemDocGia(String tuKhoa) {
+        if (danhSachDocGia.containsKey(tuKhoa)) {
+            danhSachDocGia.get(tuKhoa).display();
+        } else {
+            System.out.println("Khong tim thay doc gia voi ma " + tuKhoa);
         }
-        return ketQua;
+    }
+
+    public void capNhatThongTinDocGia(String readerCode) {
+        if (danhSachDocGia.containsKey(readerCode)) {
+            QuanLyDocGia reader = danhSachDocGia.get(readerCode);
+            Scanner scanner = new Scanner(System.in);
+            try {
+                System.out.print("Nhap ten moi (hoac nhan Enter de bo qua): ");
+                String tenMoi = scanner.nextLine();
+                if (!tenMoi.isEmpty()) {
+                    reader.setName(tenMoi);
+                }
+
+                System.out.print("Nhap tuoi moi (hoac nhan Enter de bo qua): ");
+                String tuoiMoi = scanner.nextLine();
+                if (!tuoiMoi.isEmpty()) {
+                    reader.setAge(Integer.parseInt(tuoiMoi));
+                }
+
+                System.out.print("Nhap gioi tinh moi (hoac nhan Enter de bo qua): ");
+                String gioiTinhMoi = scanner.nextLine();
+                if (!gioiTinhMoi.isEmpty()) {
+                    reader.setGender(gioiTinhMoi);
+                }
+
+                System.out.print("Nhap ngay moi (dd/MM/yyyy) (hoac nhan Enter de bo qua): ");
+                String dateMoi = scanner.nextLine();
+                if (!dateMoi.isEmpty()) {
+                    reader.setDateOfBirth(dateMoi);
+                }
+
+                System.out.print("Nhap dia chi moi (hoac nhan Enter de bo qua): ");
+                String diaChiMoi = scanner.nextLine();
+                if (!diaChiMoi.isEmpty()) {
+                    reader.setAddress(diaChiMoi);
+                }
+
+                System.out.print("Nhap ma doc gia moi (hoac nhan Enter de bo qua): ");
+                String maDocGiaMoi = scanner.nextLine();
+                if (!maDocGiaMoi.isEmpty()) {
+                    // Kiểm tra mã mới không trùng với mã độc giả khác
+                    if (!danhSachDocGia.containsKey(maDocGiaMoi)) {
+                        reader.setReaderCode(maDocGiaMoi);
+                        danhSachDocGia.remove(readerCode); // Xóa bản ghi cũ
+                        danhSachDocGia.put(maDocGiaMoi, reader); // Thêm bản ghi mới
+                    } else {
+                        System.out.println("Loi: Ma doc gia moi da ton tai!");
+                    }
+                }
+                System.out.println("Cap nhat thong tin doc gia thanh cong!");
+
+            } catch (NumberFormatException e) {
+                System.out.println("Loi: Tuoi phai la mot so nguyen!");
+            } catch (Exception e) {
+                System.out.println("Da xay ra loi: " + e.getMessage());
+            }
+        } else {
+            System.out.println("Khong tim thay doc gia voi ma " + readerCode);
+        }
     }
 }
+
+    
+
