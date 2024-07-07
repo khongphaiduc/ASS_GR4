@@ -14,7 +14,7 @@ public class Reader {
     /**
      * @param args the command line arguments
      */
-     public static void main(String[] args) {
+    public static void main(String[] args) {
         List<QuanLyDocGia> danhSachDocGia = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         int choice;
@@ -41,11 +41,10 @@ public class Reader {
                         break;
                     case 2:
                         System.out.print("Nhap ma doc gia can cap nhat: ");
-                        int maDocGiaCanCapNhat = scanner.nextInt();
-                        scanner.nextLine();
+                        String maDocGiaCanCapNhat = scanner.nextLine();
                         boolean found = false;
                         for (QuanLyDocGia docGia : danhSachDocGia) {
-                            if (docGia.getMaDocGia() == maDocGiaCanCapNhat) {
+                            if (docGia.getReaderCode().equals(maDocGiaCanCapNhat)) {
                                 docGia.capNhatThongTinDocGia();
                                 found = true;
                                 System.out.println("Cap nhat thong tin doc gia thanh cong!");
@@ -57,7 +56,7 @@ public class Reader {
                         }
                         break;
                     case 3:
-                        System.out.print("Nhap ten hoac ma doc gia can tim: ");
+                        System.out.print("Nhap ma doc gia can tim: ");
                         String tuKhoa = scanner.nextLine();
                         List<QuanLyDocGia> ketQuaTimKiem = QuanLyDocGia.timKiemDocGia(danhSachDocGia, tuKhoa);
                         if (ketQuaTimKiem.isEmpty()) {
