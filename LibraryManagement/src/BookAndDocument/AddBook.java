@@ -1,78 +1,86 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package BookAndDocument;
 
-package addDaTaBook;
-
+import DataBooks.Books;
 import DataBooks.*;
+import java.util.HashMap;
 import java.util.Scanner;
 
-public class ADD {
-
+/**
+ *
+ * @author Admin
+ */
+public class AddBook {
     ListBooks obj = new ListBooks();
-    Scanner duc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
     public void addBooksNew() {
         System.out.print("Enter đầu sách muốn thêm :");
-        String headBooks = duc.nextLine();
+        String headBooks = sc.nextLine();
 
         if (headBooks.equals("Love")) {
             System.out.println("Nhập nội dung: ");
-            String context = duc.nextLine();
+            String context = sc.nextLine();
 
             System.out.println("Nhập tiêu đề: ");
-            String title = duc.nextLine();
+            String title = sc.nextLine();
 
             System.out.println("Nhập tác giả: ");
-            String author = duc.nextLine();
+            String author = sc.nextLine();
 
             System.out.println("Nhập nhà xuất bản: ");
-            String publisher = duc.nextLine();
+            String publisher = sc.nextLine();
 
             System.out.println("Nhập năm xuất bản: ");
-            int year_of_publication = duc.nextInt();
+            int year_of_publication = sc.nextInt();
 
             System.out.println("Nhập số trang: ");
-            int number_of_pages = duc.nextInt();
-            duc.nextLine();
+            int number_of_pages = sc.nextInt();
+            sc.nextLine();
 
             System.out.println("Nhập tóm tắt: ");
-            String summary = duc.nextLine();
+            String summary = sc.nextLine();
 
             System.out.println("Nhập giá: ");
-            int price = duc.nextInt();
+            int price = sc.nextInt();
 
             System.out.print("Enter codebooks mới :");
-            String codebook = duc.nextLine();
+            String codebook = sc.nextLine();
             Love_1 loveBooknew = new Love_1(context, title, author, publisher, year_of_publication, number_of_pages, summary, price);
             obj.getDataListBook().put(codebook, loveBooknew);
-            duc.nextLine();
+            sc.nextLine();
             System.out.println("Sách " + title + " đã được thêm thành công !");
         } else if (headBooks.equals("education")) {
 
             System.out.println("Nhập tiêu đề: ");
-            String title = duc.nextLine();
+            String title = sc.nextLine();
 
             System.out.println("Nhập tác giả: ");
-            String author = duc.nextLine();
+            String author = sc.nextLine();
 
             System.out.println("Nhập nhà xuất bản: ");
-            String publisher = duc.nextLine();
+            String publisher = sc.nextLine();
 
             System.out.println("Nhập năm xuất bản: ");
-            int year_of_publication = duc.nextInt();
-            duc.nextLine();
+            int year_of_publication = sc.nextInt();
+            sc.nextLine();
 
             System.out.println("Nhập số trang: ");
-            int number_of_pages = duc.nextInt();
-            duc.nextLine();
+            int number_of_pages = sc.nextInt();
+            sc.nextLine();
 
             System.out.println("Nhập tóm tắt: ");
-            String summary = duc.nextLine();
+            String summary = sc.nextLine();
 
             System.out.println("Nhập giá: ");
-            int price = duc.nextInt();
+            int price = sc.nextInt();
             System.out.println("Nhập code cho sách :");
-            String codebook = duc.nextLine();
-            duc.nextLine();
-            duc.close();
+            String codebook = sc.nextLine();
+            sc.nextLine();
+            sc.close();
 
             Education_3 edu = new Education_3(title, author, publisher, year_of_publication, number_of_pages, summary, price);
             obj.getDataListBook().put(codebook, edu);
@@ -82,38 +90,38 @@ public class ADD {
         } else if (headBooks.equals("horrified")) {
 
             System.out.println("Nhập yếu tố kinh dị: ");
-            String fearElements = duc.nextLine();
+            String fearElements = sc.nextLine();
 
             System.out.println("Nhập yếu tố tâm lý: ");
-            String psychologicalElements = duc.nextLine();
+            String psychologicalElements = sc.nextLine();
 
             System.out.println("Nhập tiêu đề: ");
-            String title = duc.nextLine();
+            String title = sc.nextLine();
 
             System.out.println("Nhập tác giả: ");
-            String author = duc.nextLine();
+            String author = sc.nextLine();
 
             System.out.println("Nhập nhà xuất bản: ");
-            String publisher = duc.nextLine();
+            String publisher = sc.nextLine();
 
             System.out.println("Nhập năm xuất bản: ");
-            int year_of_publication = duc.nextInt();
-            duc.nextLine();
+            int year_of_publication = sc.nextInt();
+            sc.nextLine();
 
             System.out.println("Nhập số trang: ");
-            int number_of_pages = duc.nextInt();
-            duc.nextLine();
+            int number_of_pages = sc.nextInt();
+            sc.nextLine();
 
             System.out.println("Nhập tóm tắt: ");
-            String summary = duc.nextLine();
+            String summary = sc.nextLine();
 
             System.out.println("Nhập giá: ");
-            int price = duc.nextInt();
+            int price = sc.nextInt();
 
             System.out.println("Nhập code cho sách :");
-            String codebook = duc.nextLine();
+            String codebook = sc.nextLine();
 
-            duc.close();
+            sc.close();
 
             horrified_2 booknew = new horrified_2(fearElements, psychologicalElements, title, author, publisher, year_of_publication, number_of_pages, summary, price);
             obj.getDataListBook().put(codebook, booknew);

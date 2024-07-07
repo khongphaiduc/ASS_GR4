@@ -61,6 +61,25 @@ public class ListBooks {
         Education_3 book34 = new Education_3("Địa lý thế giới địa cầu", "Phạm Văn T", "NXB Giáo dục Việt Nam và Thanh thiếu niên", 2002, 400, "Giáo trình địa lý lớp 7", 44);
         Education_3 book35 = new Education_3("Hóa học hữu cơ vô cơ", "Hoàng Thị U", "NXB Giáo dục phổ thông Hà Nội", 2001, 410, "Giáo trình hóa học lớp 11", 45);
 
+
+
+        t.put("bk36", book36);
+        t.put("bk37", book37);
+        t.put("bk38", book38);
+        t.put("bk39", book39);
+        t.put("bk40", book40);
+        t.put("bk41", book41);
+        t.put("bk42", book42);
+        t.put("bk43", book43);
+        t.put("bk44", book44);
+        t.put("bk45", book45);
+        t.put("bk46", book46);
+        t.put("bk47", book47);
+        t.put("bk48", book48);
+        t.put("bk49", book49);
+        t.put("bk50", book50);
+
+
         t.put("bk1", book1);
         t.put("bk2", book2);
         t.put("bk3", book3);
@@ -125,6 +144,7 @@ public class ListBooks {
         }
     }
 
+
     public void DisplayListNameBook() {
 
         ListBooks obj = new ListBooks();
@@ -134,6 +154,22 @@ public class ListBooks {
             System.out.println("Mã Code : bk"+i +" |"+" Name Book :"+namebook);
         }
 
+    }
+
+
+    public void removeBook(String key) {
+        t.remove(key);
+    }
+
+    public Books findBook(String key) {
+        return (Books) t.get(key);
+    }
+    
+    public void updateBookPrice(String key, double newPrice) {
+        Books book = (Books) t.get(key);
+        if (book != null) {
+            book.setPrice(newPrice);
+        }
     }
 
 }

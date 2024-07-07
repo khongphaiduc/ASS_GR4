@@ -43,7 +43,7 @@ public class Love_1 extends Books {
     }
     
    @Override
-    public int getPrice(){
+    public double getPrice(){
         return super.getPrice();
     }
     
