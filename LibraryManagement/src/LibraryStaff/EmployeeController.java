@@ -1,6 +1,5 @@
 package LibraryStaff;
 
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -11,18 +10,37 @@ import java.util.Scanner;
 
 public class EmployeeController {
 
+   
+
+   
+
+   
+
     public void addemployee(Scanner scanner, ArrayList<EmployeeModel> employee) {
         System.out.println("nhập thông tin nhân viên");
         try{
         System.out.println("nhập tên nhân viên");
         String name = scanner.nextLine();
-        
+        if (!name.matches("[a-zA-Z\\s]+")) {
+        System.out.println("không hợp lệ. Nhập đúng định dạng");
+        System.out.println("nhập tên nhân viên");
+         name = scanner.nextLine();
+    }
+       
         System.out.println("nhập tuổi nhân viên");
         int age = scanner.nextInt();
         scanner.nextLine();
         
+         
+        
         System.out.println("nhập giới tính");
         String gender = scanner.nextLine();
+        if (!gender.matches("[a-zA-Z\\s]+")) {
+        System.out.println("không hợp lệ. Nhập đúng định dạng");
+        System.out.println("nhập giới tính");
+        gender = scanner.nextLine();
+        }
+        
         
         System.out.println("nhập địa chỉ nhân viên");
         String address = scanner.nextLine();
@@ -31,22 +49,23 @@ public class EmployeeController {
         int ID = scanner.nextInt();
         scanner.nextLine();
         
-        if(name.isEmpty() || gender.isEmpty() || address.isEmpty()){
-            System.out.println("cần nhập đủ thông tin");
-        }
         
 
         EmployeeModel employees = new EmployeeModel(name, address, gender, age, age, ID, ID, ID, age, age, age);
         employee.add(employees);
         System.out.println("Đã thêm nhân viên!");
-
-    }catch (InputMismatchException e) {
-        System.out.println("Lỗi! Bạn cần nhập nhập đúng định dạng số:");
-        scanner.nextLine(); 
-    }catch(Exception e){
-        System.out.println("lỗi! Bạn cần nhập nhập đúng định dạng chữ : ");
-                    }
+         
+    
+    }catch (InputMismatchException ime) {
+            System.out.println("không hợp lệ. Định dạng không đúng( nhập số )");
+            scanner.nextLine();
+        
     }
+            
+            
+    }
+    
+
 
     public void removeemployee(ArrayList<EmployeeModel> employee, int idremove) {
     
@@ -59,6 +78,7 @@ public class EmployeeController {
                     break;
                 } else {
                     System.out.println("không tìm thấy ID này");
+                    break;
                 }
 
             }
@@ -148,6 +168,7 @@ public class EmployeeController {
            
         }else {
                 System.out.println("không tìm thấy ID");
+                break;
             }
         
     }   
@@ -246,7 +267,7 @@ public class EmployeeController {
         sear = scanner.nextInt();
         for (EmployeeModel manageLibraryStaff : employee) {
             if (manageLibraryStaff.getID() == sear) {
-                System.out.println("Đã tìm thấy");
+               
                 System.out.printf("name: %s, age: %d, address: %s, ID: %d", manageLibraryStaff.getName(), manageLibraryStaff.getAge(), manageLibraryStaff.getAddress(), manageLibraryStaff.getID());
                 System.out.println("   ");
             } else {

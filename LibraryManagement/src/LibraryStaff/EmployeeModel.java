@@ -6,7 +6,9 @@ package LibraryStaff;
 
 
 public class EmployeeModel {
-    private String name, address, gender;
+
+    String name;
+    private String address, gender;
     private int age, date, ID;
     private double cost, timeWork, salary1, salary2, salary3;
 

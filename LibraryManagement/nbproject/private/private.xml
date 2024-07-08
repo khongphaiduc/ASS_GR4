@@ -3,9 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/admin/ASS_GR4/LibraryManagement/src/DataBooks/ListBooks.java</file>
             <file>file:/C:/Users/admin/ASS_GR4/LibraryManagement/src/BookAndDocument/BookMenu.java</file>
             <file>file:/C:/Users/admin/ASS_GR4/LibraryManagement/src/BookAndDocument/AddBook.java</file>
+=======
+<<<<<<< HEAD
+            <file>file:/C:/Users/admin/Desktop/ASS_GR4/LibraryManagement/src/LibraryStaff/EmployeeView.java</file>
+            <file>file:/C:/Users/admin/Desktop/ASS_GR4/LibraryManagement/src/LibraryStaff/maintest.java</file>
+            <file>file:/C:/Users/admin/Desktop/ASS_GR4/LibraryManagement/src/LibraryStaff/EmployeeModel.java</file>
+            <file>file:/C:/Users/admin/Desktop/ASS_GR4/LibraryManagement/src/LibraryStaff/EmployeeController.java</file>
+=======
+<<<<<<< HEAD
+            <file>file:/C:/Users/TRUNG%20NGUYÊN/ASS_GR4/LibraryManagement/src/Reader/Reader.java</file>
+            <file>file:/C:/Users/TRUNG%20NGUYÊN/ASS_GR4/LibraryManagement/src/Reader/ReaderManagement.java</file>
+=======
+            <file>file:/C:/Users/Admin/ASS_GR4/LibraryManagement/src/Invoice/MainVoice.java</file>
+            <file>file:/C:/Users/Admin/ASS_GR4/LibraryManagement/src/Invoice/OutInvoice.java</file>
+            <file>file:/C:/Users/Admin/ASS_GR4/LibraryManagement/src/DataBooks/ListBooks.java</file>
+>>>>>>> a70f86b4d5553b3ba78eb7272c1019899d9e629a
+>>>>>>> 147fd62dc8d25376a30853a3cd4ad0092a76b2b3
+>>>>>>> 5f5845b749ba4f22a881a9b5e36923f990f9b416
         </group>
     </open-files>
 </project-private>
