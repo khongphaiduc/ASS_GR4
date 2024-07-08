@@ -6,6 +6,7 @@ package BookAndDocument;
 
 import DataBooks.ListBooks;
 import DataBooks.*;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.UUID;
 
@@ -14,10 +15,6 @@ import java.util.UUID;
  * @author Admin
  */
 public class BookMenu {
-
-    public static void main(String[] args) {
-        bookmenu();
-    }
 
     public static void bookmenu() {
         ListBooks books = new ListBooks();
@@ -29,28 +26,35 @@ public class BookMenu {
             System.out.println("3.Thêm xóa sách.");
             System.out.println("4.Chỉnh giá tiền.");
             System.out.println("0.Exit.");
-            int choice = sc.nextInt();
-            sc.nextLine();
-            switch (choice) {
-                case 1:
-                    handleChoice1(books);
-                    break;
-                case 2:
-                    handleChoice2(sc, books);
-                    break;
-                case 3:
-                    books = handleChoice3(sc, books);
-                    break;
-                case 4:
-                    handleChoice4(sc, books);
-                case 0:
-                    System.out.println("Exit.");
-                    return;
-                default:
-                    System.out.println("xin hãy thử lại");
+            try {
+                int choice = sc.nextInt();
+                sc.nextLine();
+                switch (choice) {
+                    case 1:
+                        handleChoice1(books);
+                        break;
+                    case 2:
+                        handleChoice2(sc, books);
+                        break;
+                    case 3:
+                        books = handleChoice3(sc, books);
+                        break;
+                    case 4:
+                        handleChoice4(sc, books);
+                        break;
+                    case 0:
+                        System.out.println("Exit");
+                        return;
+                    default:
+                        System.out.println("Xin hãy thử lại");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Lỗi: Vui lòng nhập đúng định dạng dữ liệu!");
+                sc.nextLine();
+            } catch (Exception e) {
+                System.out.println("Đã xảy ra lỗi: " + e.getMessage());
             }
         }
-
     }
 
     private static void handleChoice1(ListBooks books) {
@@ -70,50 +74,59 @@ public class BookMenu {
     }
 
     private static ListBooks handleChoice3(Scanner sc, ListBooks books) {
-        Books item;
-
         while (true) {
             System.out.println("1.Thêm mới");
             System.out.println("2.Sửa sách.");
             System.out.println("3.Xóa sách.");
             System.out.println("0.Exit.");
-            int choice = sc.nextInt();
-            sc.nextLine();
-            switch (choice) {
-                case 1:
-                    item = instantBook(sc);
-                    String newKey = getKey(books);
-                    books.getDataListBook().put(newKey, item);
-                    System.out.println("Key sách mới là: " + newKey);
-                    return books;
-//                    AddBook(sc, books);
+            try {
+                int choice = sc.nextInt();
+                sc.nextLine();
+                switch (choice) {
+                    case 1:
+//                    item = instantBook(sc);
+//                    String newKey = getKey(books);
+//                    books.getDataListBook().put(newKey, item);
+//                    System.out.println("Key sách mới là: " + newKey);
 //                    return books;
-                case 2:
-                    String key = "";
-                    System.out.println("Nhập bookKey: ");
-                    if (books.getDataListBook().get(key) == null) {
-                        System.out.println("Không tìm thấy sách với key là: " + key);
-                    } else {
-                        item = instantBook(sc);
-                        books.getDataListBook().replace(key, item);
-                    }
-                    break;
-                case 3:
-                    System.out.println("Nhập mã sách cần xóa: ");
-                    String keyToDelete = sc.nextLine();
-                    if (books.findBook(keyToDelete) == null) {
-                        System.out.println("Không tìm thấy sách với mã: " + keyToDelete);
-                    } else {
-                        books.removeBook(keyToDelete);
-                        System.out.println("Sách đã được xóa");
-                    }
-                    break;
-                case 0:
-                    break;
+                        AddBook addBook = new AddBook();
+                        addBook.addBooksNew(books);
+                        return books;
+                    case 2:
+                        System.out.println("Nhập bookKey: ");
+                        String key = sc.nextLine();
+                        if (books.getDataListBook().get(key) == null) {
+                            System.out.println("Không tìm thấy sách với key là: " + key);
+                        } else {
+                            Books items = instantBook(sc);
+                            books.getDataListBook().replace(key, items);
+                            System.out.println("Sách đã được sửa thành công");
+                        }
+                        break;
+                    case 3:
+                        System.out.println("Nhập mã sách cần xóa: ");
+                        String keyToDelete = sc.nextLine();
+                        if (books.findBook(keyToDelete) == null) {
+                            System.out.println("Không tìm thấy sách với mã: " + keyToDelete);
+                        } else {
+                            books.removeBook(keyToDelete);
+                            System.out.println("Sách đã được xóa");
+                        }
+                        break;
+                    case 0:
+                        return books;
+                    default:
+                        System.out.println("Xin hãy thử lại");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Lỗi: Vui lòng nhập đúng định dạng dữ liệu!");
+                sc.nextLine();
+            } catch (Exception e) {
+                System.out.println("Đã xảy ra lỗi: " + e.getMessage());
             }
-            return books;
         }
     }
+
     private static void handleChoice4(Scanner sc, ListBooks books) {
         System.out.println("Nhập mã sách cần chỉnh giá: ");
         String key = sc.nextLine();
@@ -128,7 +141,7 @@ public class BookMenu {
             System.out.println("Không tìm thấy sách với mã: " + key);
         }
     }
-    
+
     private static Books instantBook(Scanner sc) {
         System.out.print("Nhập title: ");
         String Title = sc.nextLine();
@@ -158,6 +171,10 @@ public class BookMenu {
     }
 
     private static String getKey(ListBooks books) {
-        return "BK" + UUID.randomUUID().toString().substring(0, 3);
+        return "BK" + UUID.randomUUID().toString().substring(0, 2);
     }
+
+//    public static void main(String[] args) {
+//        bookmenu();
+//    }
 }

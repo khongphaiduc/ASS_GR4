@@ -72,7 +72,7 @@ public class OutInvoice {
 
                 Books mtp = (Books) obz.getDataListBook().get(namebooks);//ép kiểu lấy đối tưởng từ hashmap về đối tượng books
 
-                int tien = mtp.getPrice();
+                int tien = (int) mtp.getPrice();
                 sumtien = sumtien + tien;
                 
                 danhsach.add(namebooks);
