@@ -1,0 +1,12 @@
+------------- Hóa Đơn Thư Viện GR4 --------------
+Tên Khách Hàng : nguyen tuan anh 
+Thời Gian Mua Mượn :   08/07/2024  03/56/07
+Mã Hóa Hóa Đơn : 08072024035607
+Nội Dung Gồm 
+ STT :1 Sách Kinh dị A
+STT :2 Sách I
+Số Lượng :2
+Tiền Gốc Là :55.0
+Tiền Sau Khi Giảm Giá là  :55.0
+Tổng tiền cần thanh toán sau khi VAT  là: 55.55 Nghìn Đồng !
+ Cảm Ơn Quý Khách Đã Tin Tưởng Dịch Vụ Của Chúng Tôi !--------------------------------------------------------------------------------------
