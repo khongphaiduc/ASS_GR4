@@ -53,41 +53,58 @@ public class OutInvoice {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("hoa_don_" + time2s + ".txt"))) {
             writer.write("------------- Hóa Đơn Thư Viện GR4 --------------\n");
             writer.write("Tên Khách Hàng : " + name + "\n");
-            writer.write("Thời Mượn sách : " + time1s + "\n");
+            writer.write("Thời Gian Mua Mượn : " + time1s + "\n");
             writer.write("Mã Hóa Hóa Đơn : " + time2s + "\n");
 
             writer.write("Nội Dung Gồm \n ");
-            int sumtien = 0;
+            double sumtien = 0;
             ListBooks obz = new ListBooks();
-            int count = 0;
+          
+              System.out.println("Nhập 01 để kết thúc thêm sách vào hóa đơn !");
+               System.out.println("Nhập Mã Sách ");
+               int count=-1,stt=0;
+                 double moneynew=0;
+                 
             while (true) {
-
-                if (count == 0) {
-                    System.out.println("Nhập 01 để kết thúc thêm sách vào hóa đơn !");
-                    count++;
-                }
-
-                System.out.println("Nhập Mã Sách ");
-                String namebooks = duc.nextLine();
-                if (namebooks.equals("01")) {
+     stt++;
+                String codebooks = duc.nextLine();
+                count++;
+                if (codebooks.equals("01")) {
                     break;
                 }
-
-                Books mtp = (Books) obz.getDataListBook().get(namebooks);//ép kiểu lấy đối tưởng từ hashmap về đối tượng books
+                // lấy đối tượng của 1 hashmap ép kiểu về 1 đối tượng cụ thể mới mục  đích có thể truy cập lấy thông tin của 1 thuộc tính cụ thể 
+                Books mtp = (Books) obz.getDataListBook().get(codebooks);//ép kiểu lấy đối tưởng từ hashmap về đối tượng books
 
                 int tien = mtp.getPrice();
-                sumtien = sumtien + tien;
+               
+                        
+              
+                       sumtien = sumtien + tien;
+                
+             
+                     
+                
+                String namebooks="STT :"+stt+" "+mtp.getTitle();
                 
                 danhsach.add(namebooks);
 
             }
-
+            
+                      if(count>=5){
+                           moneynew  =  sumtien*0.9;
+                       }else{
+                            moneynew= sumtien;
+                      }
+      
             for (int i = 0; i < danhsach.size(); i++) {
-                writer.write(danhsach.get(i) + "\n");
+            writer.write(danhsach.get(i)+"\n");
             }
-
-            writer.write("Tổng Tiền Cần Thanh Toán  Thanh Toán :  ");
-            writer.write(String.valueOf(sumtien)+ " Nghìn Đồng !");
+            
+            writer.write("Số Lượng :"+count+"\n");
+            writer.write("Tiền Gốc Là :"+sumtien +"\n");
+            writer.write("Tiền Sau Khi Giảm Giá là  :"+moneynew +"\n");
+            writer.write("Tổng tiền cần thanh toán sau khi VAT  là: ");
+            writer.write(String.valueOf(moneynew*1.01 )+ " Nghìn Đồng !");
             writer.write("\n ");
             writer.write("Cảm Ơn Quý Khách Đã Tin Tưởng Dịch Vụ Của Chúng Tôi !");
         }

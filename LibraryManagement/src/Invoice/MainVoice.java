@@ -12,18 +12,42 @@ public class MainVoice {
         OutInvoice obj1 = new OutInvoice();
         ListBooks obj2 = new ListBooks();
 
-        System.out.print("Nhập tên :");
-        String name = duc.nextLine();
-        System.out.print("Nhập Tuổi : ");
-        int age = duc.nextInt();
-        obj2.display();
-
-        try {
-            obj1.invoice(name, age);
-
-        } catch (Exception e) {
-            System.out.println("Nhập sai ");
+        System.out.println("----------------- HÓA ĐƠN ---------------");
+        
+        System.out.println("Enter 1 để tạo hóa đơn mới.");
+        System.out.println("Enter 2 để tìm kiếm hóa đơn.");
+        System.out.println("Enter 0 để kết thúc.");
+        
+        int op=duc.nextInt();
+        duc.nextLine();
+        switch (op) {
+            case 1:
+                System.out.print("Nhập tên :");
+                String name = duc.nextLine();
+                System.out.print("Nhập Tuổi : ");
+                int age = duc.nextInt();
+                obj2.DisplayListNameBook();
+                try {
+                    obj1.invoice(name, age);
+                    
+                } catch (Exception e) {
+                    System.out.println("Nhập sai ");
+                }       break;
+            case 2:
+                System.out.print("Nhập Mã Hóa Đơn : ");
+                String code =duc.nextLine();
+                try{
+                    obj1.FindHoaDon(code);
+                    
+                    
+                }catch(Exception e){
+                    System.out.println("Hóa Đơn Không Tồn Tại !");                                                                                                 
+                }       break;
+            case 0:                               
+                System.out.println("HIHIHIHIHIH");
+                break;
+            default:
+                break;
+        }              
         }
-
-    }
 }

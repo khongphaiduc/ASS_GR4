@@ -11,15 +11,13 @@ package DataBooks;
 public class Education_3  extends Books{
 
 
+    
+
     public Education_3(String Title, String Author, String Publisher, int Year_of_Publication, int Number_of_Pages, String Summary, int price) {
         super(Title, Author, Publisher, Year_of_Publication, Number_of_Pages, Summary, price);
     }
 
-    public Education_3(String Subject, String Title, String Author, String Publisher, int Year_of_Publication, int Number_of_Pages, String Summary, int price) {
-        super(Title, Author, Publisher, Year_of_Publication, Number_of_Pages, Summary, price);
-        
-    }
-
+   
 
     @Override
     public String toString() {
@@ -34,7 +32,7 @@ public class Education_3  extends Books{
     }
     
     @Override
-    public int getPrice(){
+    public double getPrice(){
         return super.getPrice();
     }
     
