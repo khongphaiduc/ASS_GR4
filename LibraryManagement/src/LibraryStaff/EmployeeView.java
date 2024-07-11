@@ -1,6 +1,7 @@
 package LibraryStaff;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 import java.util.Scanner;
 
@@ -27,7 +28,7 @@ public class EmployeeView {
             System.out.println("6.cập nhật luong nhân viên - tính lương nhân viên");
             System.out.println("0.chọn 0 để thoát");
 
-         
+         try{
             choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -54,9 +55,14 @@ public class EmployeeView {
                    System.out.println("dữ liệu nhập không đúng!-Chọn các chức năng sau :");
             }
           
-        } while (choice != 0);
+        }catch(InputMismatchException ime){
+             System.out.println("lựa chọn không hợp lệ");
+             scanner.nextLine();
+            choice = -1;
+        }
         
 
+    }while (choice != 0);
     }
 
     public void addemployee(ArrayList<EmployeeModel> employee) {

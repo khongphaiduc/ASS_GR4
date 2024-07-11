@@ -2,10 +2,21 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/C:/Users/TRUNG%20NGUYÊN/ASS_GR4/LibraryManagement/src/Reader/Reader.java</file>
             <file>file:/C:/Users/TRUNG%20NGUYÊN/ASS_GR4/LibraryManagement/src/Main/Main.java</file>
             <file>file:/C:/Users/TRUNG%20NGUYÊN/ASS_GR4/LibraryManagement/src/Reader/ReaderManagement.java</file>
+=======
+<<<<<<< HEAD
+        <group/>
+=======
+        <group>
+            <file>file:/C:/Users/Admin/ASS_GR4/LibraryManagement/src/Invoice/MainVoice.java</file>
+            <file>file:/C:/Users/Admin/ASS_GR4/LibraryManagement/src/Main/Main.java</file>
+            <file>file:/C:/Users/Admin/ASS_GR4/LibraryManagement/src/Invoice/OutInvoice.java</file>
+>>>>>>> 0cc516c50d9fe4abd511a00ed1335111f8203ee9
         </group>
+>>>>>>> 99bf7f7b1cf25b50fcc3858a1c1d408cc09c9574
     </open-files>
 </project-private>

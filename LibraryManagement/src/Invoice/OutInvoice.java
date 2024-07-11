@@ -75,7 +75,13 @@ public class OutInvoice {
                 // lấy đối tượng của 1 hashmap ép kiểu về 1 đối tượng cụ thể mới mục  đích có thể truy cập lấy thông tin của 1 thuộc tính cụ thể 
                 Books mtp = (Books) obz.getDataListBook().get(codebooks);//ép kiểu lấy đối tưởng từ hashmap về đối tượng books
 
-                int tien = mtp.getPrice();
+
+       
+
+                int tien = (int) mtp.getPrice();
+                sumtien = sumtien + tien;
+
+          
                
                         
               
@@ -85,6 +91,7 @@ public class OutInvoice {
                      
                 
                 String namebooks="STT :"+stt+" "+mtp.getTitle();
+
                 
                 danhsach.add(namebooks);
 
@@ -106,9 +113,10 @@ public class OutInvoice {
             writer.write("Tổng tiền cần thanh toán sau khi VAT  là: ");
             writer.write(String.valueOf(moneynew*1.01 )+ " Nghìn Đồng !");
             writer.write("\n ");
-            writer.write("Cảm Ơn Quý Khách Đã Tin Tưởng Dịch Vụ Của Chúng Tôi !");
+            writer.write("Cảm Ơn Quý Khách Đã Tin Tưởng Dịch Vụ Của Chúng Tôi !\n");
+              writer.write("--------------------------------------------------------------------------------------");
         }
-
+        
         BufferedReader reader = new BufferedReader(new FileReader("hoa_don_" + time2s + ".txt"));
 
         String line;
