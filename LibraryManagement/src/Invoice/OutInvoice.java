@@ -75,13 +75,13 @@ public class OutInvoice {
                 // lấy đối tượng của 1 hashmap ép kiểu về 1 đối tượng cụ thể mới mục  đích có thể truy cập lấy thông tin của 1 thuộc tính cụ thể 
                 Books mtp = (Books) obz.getDataListBook().get(codebooks);//ép kiểu lấy đối tưởng từ hashmap về đối tượng books
 
-<<<<<<< HEAD
-                Books mtp = (Books) obz.getDataListBook().get(namebooks);//ép kiểu lấy đối tưởng từ hashmap về đối tượng books
+
+       
 
                 int tien = (int) mtp.getPrice();
                 sumtien = sumtien + tien;
-=======
-                double tien = mtp.getPrice();
+
+          
                
                         
               
@@ -91,7 +91,7 @@ public class OutInvoice {
                      
                 
                 String namebooks="STT :"+stt+" "+mtp.getTitle();
->>>>>>> 5f5845b749ba4f22a881a9b5e36923f990f9b416
+
                 
                 danhsach.add(namebooks);
 
