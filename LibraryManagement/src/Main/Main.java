@@ -17,6 +17,10 @@ public class Main {
         while (mycheck) {
 
             System.out.println("------------- HỆ THỐNG QUẢN LÝ  Nhà Sách --------------");
+            System.out.println("Enter 1 Quản lý Mượn Trả Sách  ");
+            System.out.println("Enter 2 Quản lý Sách và Tài Liệu  ");
+            System.out.println("Enter 3 Quản lý Nhân Viên Thư Viện ");
+            System.out.println("Enter 4 Quản lý Độc Giả ");
             System.out.println("Enter 5 Hóa Đơn ");
             System.out.println("Enter 6 Thoát ProGram !");
             System.out.println("\n");
