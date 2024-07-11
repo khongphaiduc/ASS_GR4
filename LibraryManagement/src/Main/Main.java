@@ -4,6 +4,7 @@ import BookAndDocument.BookMenu;
 import DataBooks.*;
 import Invoice.*;
 import java.util.Scanner;
+import Reader.*;
 
 public class Main {
 
@@ -39,6 +40,7 @@ public class Main {
                 }
                 case 4: {
                     // quản lý độc giả ở đây 
+                    Reader.main(args);
                     break;
                 }
                 case 5: {
