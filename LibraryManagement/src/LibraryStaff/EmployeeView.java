@@ -51,14 +51,13 @@ public class EmployeeView {
                 case 6:
                     employeeSalary(scanner, employee, choice, choice, choice, choice, choice);
                     break;
-               default:
-                   System.out.println("dữ liệu nhập không đúng!-Chọn các chức năng sau :");
+               
             }
           
         }catch(InputMismatchException ime){
              System.out.println("lựa chọn không hợp lệ");
              scanner.nextLine();
-            choice = -1;
+             choice = -1;
         }
         
 
@@ -90,4 +89,5 @@ public class EmployeeView {
     public void employeeSalary(Scanner scanner, ArrayList<EmployeeModel> employee, double time, int choice, int id, double salary, int shift) {
         Controler.employeeSalary(scanner, employee, time, choice, id, salary, shift);
     }
+    
 }

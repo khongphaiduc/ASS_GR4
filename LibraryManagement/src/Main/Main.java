@@ -5,6 +5,7 @@ import DataBooks.*;
 import Invoice.*;
 import java.util.Scanner;
 import Reader.*;
+import LibraryStaff.maintest;
 
 public class Main {
 
@@ -17,12 +18,14 @@ public class Main {
         while (mycheck) {
 
             System.out.println("------------- HỆ THỐNG QUẢN LÝ  Nhà Sách --------------");
+            System.out.println("Enter 3 Quản Lý Nhân Viên ");
             System.out.println("Enter 5 Hóa Đơn ");
             System.out.println("Enter 6 Thoát ProGram !");
             System.out.println("\n");
             System.out.print("NHập lựa chọn của bạn :");
 
             int op = duc.nextInt();
+            duc.nextLine();
 
             switch (op) {
 
@@ -35,6 +38,7 @@ public class Main {
                     break;
                 }
                 case 3: {
+                    maintest.main(args);
                     //quả lý nhân viên thư viện ở đây
                     break;
                 }
@@ -55,4 +59,6 @@ public class Main {
             }
         }
     }
+
+   
 }
