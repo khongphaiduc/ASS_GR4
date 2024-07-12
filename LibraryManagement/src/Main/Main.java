@@ -19,15 +19,12 @@ public class Main {
 
             System.out.println("------------- HỆ THỐNG QUẢN LÝ  Nhà Sách --------------");
 
-            System.out.println("Enter 3 Quản Lý Nhân Viên ");
+            System.out.println("Enter 1: Quản lý Sách và Tài Liệu  ");
+            System.out.println("Enter 2: Quản lý Nhân Viên Thư Viện ");
+            System.out.println("Enter 3: Quản lý Độc Giả ");
 
-            System.out.println("Enter 1 Quản lý Mượn Trả Sách  ");
-            System.out.println("Enter 2 Quản lý Sách và Tài Liệu  ");
-            System.out.println("Enter 3 Quản lý Nhân Viên Thư Viện ");
-            System.out.println("Enter 4 Quản lý Độc Giả ");
-
-            System.out.println("Enter 5 Hóa Đơn ");
-            System.out.println("Enter 6 Thoát ProGram !");
+            System.out.println("Enter 4: Hóa Đơn ");
+            System.out.println("Enter 5: Thoát ProGram !");
             System.out.println("\n");
             System.out.print("NHập lựa chọn của bạn :");
 
@@ -36,33 +33,32 @@ public class Main {
 
             switch (op) {
 
+                
                 case 1: {
-                    // quản lý mượn trả sách ở đây
-                    break;
-                }
-                case 2: {
                     BookMenu.bookmenu();
                     break;
                 }
-                case 3: {
+                case 2: {
                     maintest.main(args);
                     //quả lý nhân viên thư viện ở đây
                     break;
                 }
-                case 4: {
+                case 3: {
                     // quản lý độc giả ở đây 
                     Reader.main(args);
                     break;
                 }
-                case 5: {
+                case 4: {
                     MainVoice.main(args);
                     break;
                 }
-                case 6: {
+                case 5: {
                     System.out.println("Đã Thoát !");
                     mycheck = false;
                     break;
+                 
                 }
+                default: System.out.println("lỗi dữ liệu!!!!!!!!");
             }
         }
     }
