@@ -97,7 +97,7 @@ public class MainVoice {
                     break;
                     }
                 case 0:
-                    System.out.println("Nếu Muốn Thoát hãy Push bất kỳ 1 phím !");
+                    System.out.println("Nhấn 1 phím bất kỳ để thoát khỏi mục hóa đơn ^*^ ");
                     String out=duc.nextLine();
                     mycheck=false;
                     break;

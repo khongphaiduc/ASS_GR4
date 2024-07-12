@@ -4,7 +4,6 @@
  */
 package LibraryStaff;
 
-
 public class EmployeeModel {
 
     String name;
@@ -12,20 +11,15 @@ public class EmployeeModel {
     private int age, date, ID;
     private double cost, timeWork, salary1, salary2, salary3;
 
-    
-    public EmployeeModel(String name, String address, String gender, int age, int date, int ID, double cost, double timeWork, double salary1, double salary2, double salary3) {
+    public EmployeeModel(String name, String address, String gender, int age, int ID) {
         this.name = name;
         this.address = address;
         this.gender = gender;
-       
+
         this.age = age;
-        this.date = date;
+
         this.ID = ID;
-        this.cost = cost;
-        this.timeWork = timeWork;
-        this.salary1 = salary1;
-        this.salary2 = salary2;
-        this.salary3 = salary3;
+
     }
 
     public String getName() {
@@ -51,7 +45,6 @@ public class EmployeeModel {
     public void setGender(String gender) {
         this.gender = gender;
     }
-
 
     public int getAge() {
         return age;
@@ -117,8 +110,4 @@ public class EmployeeModel {
         this.salary3 = salary3;
     }
 
-   
-    
-    
-    
 }
