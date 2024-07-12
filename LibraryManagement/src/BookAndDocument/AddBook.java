@@ -5,7 +5,6 @@
 package BookAndDocument;
 
 import DataBooks.*;
-import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -15,9 +14,9 @@ import java.util.Scanner;
  */
 class AddBook {
 
-    Scanner sc = new Scanner(System.in);
+    private static Scanner sc = new Scanner(System.in);
 
-    public void addBooksNew(ListBooks books) {
+    public static void addBooksNew(ListBooks books) {
         System.out.print("Enter đầu sách muốn thêm: ");
         String headBooks = sc.nextLine();
 
@@ -70,18 +69,18 @@ class AddBook {
 
                 System.out.println("Nhập năm xuất bản: ");
                 int year_of_publication = sc.nextInt();
-                sc.nextLine(); 
+                sc.nextLine();
 
                 System.out.println("Nhập số trang: ");
                 int number_of_pages = sc.nextInt();
-                sc.nextLine(); 
+                sc.nextLine();
 
                 System.out.println("Nhập tóm tắt: ");
                 String summary = sc.nextLine();
 
                 System.out.println("Nhập giá: ");
                 int price = sc.nextInt();
-                sc.nextLine(); 
+                sc.nextLine();
 
                 System.out.println("Nhập code cho sách: ");
                 String codebook = sc.nextLine();
@@ -110,18 +109,18 @@ class AddBook {
 
                 System.out.println("Nhập năm xuất bản: ");
                 int year_of_publication = sc.nextInt();
-                sc.nextLine(); // consume the remaining newline
+                sc.nextLine();
 
                 System.out.println("Nhập số trang: ");
                 int number_of_pages = sc.nextInt();
-                sc.nextLine(); 
+                sc.nextLine();
 
                 System.out.println("Nhập tóm tắt: ");
                 String summary = sc.nextLine();
 
                 System.out.println("Nhập giá: ");
                 int price = sc.nextInt();
-                sc.nextLine(); 
+                sc.nextLine();
 
                 System.out.println("Nhập code cho sách: ");
                 String codebook = sc.nextLine();

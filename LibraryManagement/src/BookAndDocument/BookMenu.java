@@ -84,13 +84,7 @@ public class BookMenu {
                 sc.nextLine();
                 switch (choice) {
                     case 1:
-//                    item = instantBook(sc);
-//                    String newKey = getKey(books);
-//                    books.getDataListBook().put(newKey, item);
-//                    System.out.println("Key sách mới là: " + newKey);
-//                    return books;
-                        AddBook addBook = new AddBook();
-                        addBook.addBooksNew(books);
+                        AddBook.addBooksNew(books);
                         return books;
                     case 2:
                         System.out.println("Nhập bookKey: ");
