@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Reader {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+       Scanner scanner = new Scanner(System.in);
         String choice = "";
 
         do {
@@ -48,17 +48,17 @@ public class Reader {
                         String codeToShow = scanner.nextLine();
                         ReaderManagement.searchReader(codeToShow);
                         break;
-
                     case 5:
                         System.out.println("Thoat khoi chuong trinh.");
                         break;
                     default:
-                        System.out.println("Lua chon sai(chon 1 hoac 2 hoac 3). Vui long nhap lai.");
+                        System.out.println("Lua chon sai (chon 1 hoac 2 hoac 3 hoac 4 hoac 5). Vui long nhap lai.");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Lua chon sai. Vui long nhap mot so nguyen.");
             }
 
-        } while (!choice.equals("4"));
+        } while (!choice.equals("5"));
     }
 }
+    
